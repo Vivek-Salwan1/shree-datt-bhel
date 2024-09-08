@@ -14,6 +14,7 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 15px;
+    overflow-x: hidden;
     background-color: #fff; /* White background */
 }
 
@@ -210,7 +211,7 @@ ul li strong {
 
 /* Product Description */
 .product-card p {
-    font-size: 14px;
+    font-size: 11px;
     color: #fff; /* White text for descriptions */
     line-height: 1.2;
 }
@@ -312,7 +313,8 @@ ul li strong {
 
 .business-hours li {
     font-size: 16px;
-    color: #555;
+    color: rgb(23, 23, 99);
+    font-weight: bold;
     line-height: 1.6;
 }
 
@@ -369,4 +371,29 @@ iframe {
     background: transparent;
     cursor: pointer;
     z-index: 2; /* Ensures the overlay is above the iframe */
+}
+
+
+
+/* Footer Section */
+.footer-name {
+    text-align: center;
+    margin-top: 50px; /* Space from the content above */
+    padding: 15px;
+    color: rgba(132, 5, 132, 0.884);
+    background-color: #fff; /* Light background to highlight the text */
+    margin-bottom: 20px;
+}
+
+.footer-name img{
+  width: 100%;
+  height: auto;
+
+}
+
+/* Responsive adjustment */
+@media screen and (max-width: 600px) {
+    .footer-name h1 {
+        font-size: 50px; /* Slightly smaller font size for mobile screens */
+    }
 }

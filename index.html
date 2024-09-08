@@ -82,7 +82,7 @@
                 <div class="product-card">
                     <img src="./imgs/papadi-chat.jpeg" alt="शेवपुरी">
                     <h3>पापडी चाट</h3>
-                    <p>पापडी चाटच्या उत्कृष्ट आणि मसालेदार स्वादाने तुमचं मन आणि पोट दोन्ही आनंदित होतील.</p>
+                    <p>पापडी चाटच्या मसालेदार स्वादाने तुमचं मन आणि पोट दोन्ही आनंदित होतील.</p>
                 </div>
 
                 <div class="product-card">
@@ -90,7 +90,7 @@
                     <h3>अमेरिकन शेवपुरी</h3>
                     <p>आमच्या अमेरिकन शेवपुरीने तुम्हाला ग्लोबल फ्लेवरचा अनोखा अनुभव देईल</p>
                 </div>
-            </div>
+            </div><br><br>
         </div><br><br>
 
         <!-- Carousel Section -->
@@ -143,11 +143,11 @@
         </div>
 
 
-        <!-- footer -->
-        <div class="footer-name">
-            <img src="./footer.jpeg" alt="" srcset="">
-        </div>
 
+        <!-- footer -->
+        <!-- <div class="footer-name">
+          <img src="./footer.jpeg" alt="img">
+        </div> -->
 
     </div>
 
@@ -157,84 +157,125 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <!-- GSAP Animations with ScrollTrigger -->
+
     <script>
-        // Register ScrollTrigger plugin
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Animate logo section
-        gsap.from(".logo-name", {
-            duration: 1,
-            y: -50,
-            opacity: 0,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: ".logo-name",
-                start: "top 80%", // animation starts when logo-name is 80% from the top of the viewport
-                toggleActions: "play none none none"
-            }
-        });
-
-
-
-        // Animate each section on scroll
-        const sections = [".about", ".services", ".product-showcase", ".carousel", ".business-hours-location", ".footer-name"];
-        sections.forEach(section => {
-            gsap.from(section, {
-                duration: 1,
+            gsap.from(".logo", {
                 opacity: 0,
-                y: 30,
-                ease: "power2.out",
+                scale: 0.5,
+                duration: 1,
                 scrollTrigger: {
-                    trigger: section,
-                    start: "top 80%", // animation starts when section is 80% from the top of the viewport
-                    toggleActions: "play none none none"
+                    trigger: ".logo",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
                 }
             });
-        });
 
-        // Animate each member of the team section
-        gsap.from(".product-showcase .product-card", {
-            duration: 0.8,
-            opacity: 0,
-            y: 20,
-            stagger: 0.2,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: ".team",
-                start: "top 80%",
-                toggleActions: "play none none none"
-            }
-        });
+            gsap.from(".logo-name h2", {
+                opacity: 0,
+                x: 10,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".logo-name h2",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                }
+            });
 
-        // Animate service icons
-        gsap.from(".business-location", {
-            duration: 0.6,
-            opacity: 0,
-            scale: 0.5,
-            stagger: 0.1,
-            ease: "back.out(1.7)",
-            scrollTrigger: {
-                trigger: ".services",
-                start: "top 80%",
-                toggleActions: "play none none none"
-            }
-        });
+            // Animate the review section
+            gsap.from(".review", {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".review",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                }
+            });
 
-        // Animate contact details
-        gsap.from(".contact-details li", {
-            duration: 0.8,
-            opacity: 0,
-            x: -20,
-            stagger: 0.1,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: ".contacts",
-                start: "top 80%",
-                toggleActions: "play none none none"
-            }
-        });
+            // Animate the About section
+            gsap.from(".about", {
+                opacity: 0,
+                x: -100,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".about",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                }
+            });
 
+            // Animate the Product Showcase section
+            gsap.from(".product-showcase h3", {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".product-showcase h3",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                }
+            });
 
+            gsap.from(".product-card", {
+                opacity: 0,
+                y: 10,
+                duration: 1,
+                stagger: 0.3,
+                scrollTrigger: {
+                    trigger: ".product-showcase",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                }
+            });
+
+            // Animate the carousel
+            gsap.from(".carousel", {
+                opacity: 0,
+                scale: 0.8,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".carousel",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                }
+            });
+
+            // Animate Business Hours and Location
+            gsap.from(".business-hours-location h2", {
+                opacity: 0,
+                y: -50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".business-hours-location h2",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                }
+            });
+
+            gsap.from(".hours-location-container", {
+                opacity: 0,
+                x: -100,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".hours-location-container",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                }
+            });
+
+            // Animate the map
+            gsap.from(".map-container", {
+                opacity: 0,
+                y: 100,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".map-container",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                }
+            });
+    
 
     </script>
 
